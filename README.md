@@ -21,8 +21,9 @@
   python isspy.py and input number **1** for select Windows And Start Scan **OR** input Number **2** For Select Linux And Start Scan
   
   **OR** You Can Select It Using Command Line Like This:
-        - python isspy.py 1
-        - python isspy.py 2
+        
+     - python isspy.py 1
+     - python isspy.py 2
   
 
 # That's All:
