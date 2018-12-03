@@ -5,8 +5,8 @@
   
 ***
 
-**This Tool Help You For Scan Your System ESTABLISHED Conncetions, 
-For Know IF This Connection Is Trassted Or Not !!!**
+**This Tool Help You For LookUP All Foregin IP Addresses Status ESTABLISHED ON Your System , 
+ And Get GeoIP INFO About IT For Know IF This Connection Is Trassted Or Not From GeoIP INFO!!!**
 
 # How To Install:
    * git clone https://github.com/Oseid/IsSpy.git
