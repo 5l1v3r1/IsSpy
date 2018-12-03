@@ -5,8 +5,8 @@
   
 ***
 
-**This Tool Help You For LookUP All Foregin IP Addresses Status ESTABLISHED ON Your System , 
- And Get GeoIP INFO About IT For Know IF This Connection Is Trassted Or Not From GeoIP INFO!!!**
+**This Tool Help You For Look UP All Foreign IP Addresses Status ESTABLISHED ON Your System , 
+And Get GeoIP INFO About it For Know IF This Connection Is Trusted Or Not From GeoIP INFO !!!**
 
 # How To Install:
    * git clone https://github.com/Oseid/IsSpy.git
