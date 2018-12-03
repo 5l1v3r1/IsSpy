@@ -7,6 +7,7 @@
 #[C]CodedBy : Oseid Aldary                        #
 ###################################################
 #
+#
 #Modules
 try:
   import socket,re,urllib2,json,sys
@@ -299,7 +300,6 @@ Examples:
 	 else:
 	   print(rd+"\n["+yl+"!"+rd+"]"+yl+" IsSpy: Error: No Such Option: "+ch)
 	   exit(1)
-
 
 if __name__=="__main__":
         try:
