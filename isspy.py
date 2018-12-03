@@ -11,7 +11,7 @@
 #Modules
 try:
   import socket,re,urllib2,json,sys
-  from os import system as sy , popen, geteuid as uid; from time import sleep
+  from os import system as sy , popen; from time import sleep
   sy("")
 except ImportError as e:
 	e = e[0][16:]
@@ -135,6 +135,7 @@ class checkmecon:
                 if  sys.platform not in ["linux", "linux2"]:
                         print(rd+"\n["+yl+"!"+rd+"] Error:"+yl+" Your Not Using ["+rd+"Linux OS"+yl+"]"+rd+" !!!"+wi)
                         exit(1)
+		from os import geteuid as uid
 		if uid() !=0:
 		 	print(rd+"\n["+yl+"!"+rd+"]"+yl+" Error: Please Run This Script As "+gr+"ROOT"+rd+" !!!")
 			exit(1)
