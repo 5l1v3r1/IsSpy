@@ -64,72 +64,72 @@ class checkmecon:
                 ip = foreign_IPs[i]
                 if ip in checked: continue
                 if len(foreign_IPs) <=8:
-                    try:
-                        url = "http://ip-api.com/json/"
-                        response = urllib2.urlopen(url + str(ip))
-                        name = response.read()
-                        labs = json.loads(name.decode("utf-8"))
-                        print(" ")
-                        region = labs['regionName']
-                        print(rd+"INFO"+gr+":["+wi+str(ip)+gr+"]===:["+yl+str(loop)+gr+"]")
-                        sleep(0.10)
-                        print(gr + "\t\t IP: " +wi+ labs['query'])
-                        sleep(0.10)
-                        print(gr+ "\t\t Status: " +wi+ labs['status'])
-                        sleep(0.10)
-                        print(gr+ "\t\t Region: "+wi+"{}".format(region))
-                        sleep(0.10)
-                        print(gr + "\t\t Country: " +wi+ labs['country'])
-                        sleep(0.10)
-                        print(gr + "\t\t City: " +wi+ labs['city'])
-                        sleep(0.10)
-                        print(gr + "\t\t ISP: "+wi + labs['isp'])
-                        sleep(0.10)
-                        print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
-                        sleep(0.10)
-                        print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
-                        sleep(0.10)
-                        print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
-                        sleep(0.10)
-                        print(gr + "\t\t AS: " +wi+ labs['as'])
-                        sleep(0.10)
-                        print(pu+"===============================\n"+wi)
-                        checked.append(ip)
-                        loop+=1
-                    except KeyboardInterrupt:
-                        print(" ")
-                        exit(1)
-                    except:
-		        print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
-                        pass
+	             try:
+                            url = "http://ip-api.com/json/"
+                            response = urllib2.urlopen(url + str(ip) )
+                            name = response.read()
+                            labs = json.loads(name)
+			    theip = labs['query'].encode('ascii','replace')
+                            print(gr+"\n["+wi+"#"+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
+	                    test = labs['regionName'].encode('ascii','replace')
+                            print(rd+"INFO"+gr+":["+wi+str(theip).encode('ascii','replace')+gr+"]===:")
+	                    sleep(0.10)
+                            print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
+	                    sleep(0.10)
+                            print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace')) 
+                            sleep(0.10)
+                            print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(pu+"===============================\n"+wi)
+	             except KeyboardInterrupt:
+                                print(rd+"\n["+yl+"CTRL+C"+rd+"]"+yl+" Exiting.....\n")
+                                exit(1)
+	             except:
+		                print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
+				print(yl+"["+rd+"!"+yl+"] "+wi+"Show This GeoIP INFO For This IP Here[ "+gr+"https://whatismyipaddress.com/ip/"+str(ip)+wi+" ]")
+                                pass
 		else:
-                   try:
-                        url = "http://ip-api.com/json/"
-                        response = urllib2.urlopen(url + str(ip) )
-                        name = response.read()
-                        labs = json.loads(name.decode("utf-8"))
-                        print(" ")
-                        region = labs['regionName']
-                        print(rd+"INFO"+gr+":["+wi+str(ip)+gr+"]===:["+yl+str(loop)+gr+"]")
-                        print(gr + "\t\t IP: " +wi+ labs['query'])
-                        print(gr+ "\t\t Status: " +wi+ labs['status'])
-                        print(gr+ "\t\t Region: "+wi+"{}".format(region))
-                        print(gr + "\t\t Country: " +wi+ labs['country'])
-                        print(gr + "\t\t City: " +wi+ labs['city'])
-                        print(gr + "\t\t ISP: "+wi + labs['isp'])
-                        print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
-                        print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
-                        print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
-                        print(gr + "\t\t AS: " +wi+ labs['as'])
-                        print(pu+"===============================\n"+wi)
-                        checked.append(ip)
-                        loop+=1
-                   except KeyboardInterrupt:
-                           print(" ")
-                           exit(1)
-                   except:
-			print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
-                        pass
+	             try:
+                            url = "http://ip-api.com/json/"
+                            response = urllib2.urlopen(url + str(ip) )
+                            name = response.read()
+                            labs = json.loads(name)
+			    theip = labs['query'].encode('ascii','replace')
+                            print(gr+"\n["+wi+"#"+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
+	                    test = labs['regionName'].encode('ascii','replace')
+                            print(rd+"INFO"+gr+":["+wi+str(theip).encode('ascii','replace')+gr+"]===:")
+                            print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
+                            print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
+                            print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace')) 
+                            print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
+                            print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
+                            print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
+                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
+                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
+                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
+                            print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
+                            print(pu+"===============================\n"+wi)
+	             except KeyboardInterrupt:
+                                print(rd+"\n["+yl+"CTRL+C"+rd+"]"+yl+" Exiting.....\n")
+                                exit(1)
+	             except:
+		                print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
+				print(yl+"["+rd+"!"+yl+"] "+wi+"Show This GeoIP INFO For This IP Here[ "+gr+"https://whatismyipaddress.com/ip/"+str(ip)+wi+" ]")
+                                pass
 
         def Linux(self):
                 if  sys.platform not in ["linux", "linux2"]:
@@ -160,74 +160,73 @@ class checkmecon:
 		   ip = ip.strip()
 		   if ip in checked: continue
 		   if len(fop) <=4:
-			try:
-				url = "http://ip-api.com/json/"
-				response = urllib2.urlopen(url + str(ip) )
-				name = response.read()
-				labs = json.loads(name.decode("utf-8"))
-				print(" ")
-				region = labs['regionName']
-				print(rd+"INFO"+gr+":["+wi+str(ip)+gr+"]===:["+yl+str(loop)+gr+"]")
-				sleep(0.10)
-				print(gr + "\t\t IP: " +wi+ labs['query'])
-				sleep(0.10)
-				print(gr+ "\t\t Status: " +wi+ labs['status'])
-                                sleep(0.10)
-				print(gr+ "\t\t Region: "+wi+"{}".format(region))
-				sleep(0.10)
-				print(gr + "\t\t Country: " +wi+ labs['country'])
-				sleep(0.10)
-				print(gr + "\t\t City: " +wi+ labs['city'])
-				sleep(0.10)
-				print(gr + "\t\t ISP: "+wi + labs['isp'])
-				sleep(0.10)
-				print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
-				sleep(0.10)
-				print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
-				sleep(0.10)
-				print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
-				sleep(0.10)
-				print(gr + "\t\t AS: " +wi+ labs['as'])
-				sleep(0.10)
-				print(pu+"===============================\n"+wi)
-				checked.append(ip)
-				loop+=1
-			except KeyboardInterrupt:
-				print(" ")
-				exit(1)
-			except:
-			    print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
-			    pass
+	             try:
+                            url = "http://ip-api.com/json/"
+                            response = urllib2.urlopen(url + str(ip) )
+                            name = response.read()
+                            labs = json.loads(name)
+			    theip = labs['query'].encode('ascii','replace')
+                            print(gr+"\n["+wi+"#"+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
+	                    test = labs['regionName'].encode('ascii','replace')
+                            print(rd+"INFO"+gr+":["+wi+str(theip).encode('ascii','replace')+gr+"]===:")
+	                    sleep(0.10)
+                            print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
+	                    sleep(0.10)
+                            print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace')) 
+                            sleep(0.10)
+                            print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
+                            sleep(0.10)
+                            print(pu+"===============================\n"+wi)
+	             except KeyboardInterrupt:
+                                print(rd+"\n["+yl+"CTRL+C"+rd+"]"+yl+" Exiting.....\n")
+                                exit(1)
+	             except:
+		                print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
+				print(yl+"["+rd+"!"+yl+"] "+wi+"Show This GeoIP INFO For This IP Here[ "+gr+"https://whatismyipaddress.com/ip/"+str(ip)+wi+" ]")
+                                pass
 
 		   else:
-			try:
-				url = "http://ip-api.com/json/"
-				response = urllib2.urlopen(url + str(ip) )
-				name = response.read()
-				labs = json.loads(name.decode("utf-8"))
-				print(" ")
-				region = labs['regionName']
-				print(rd+"INFO"+gr+":["+wi+str(ip)+gr+"]===:["+yl+str(loop)+gr+"]")
-				print(gr + "\t\t IP: " +wi+ labs['query'])
-				print(gr+ "\t\t Status: " +wi+ labs['status'])
-				print(gr+ "\t\t Region: "+wi+"{}".format(region))
-				print(gr + "\t\t Country: " +wi+ labs['country'])
-				print(gr + "\t\t City: " +wi+ labs['city'])
-				print(gr + "\t\t ISP: "+wi + labs['isp'])
-				print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
-				print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
-				print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
-				print(gr + "\t\t AS: " +wi+ labs['as'])
-				print(pu+"===============================\n"+wi)
-				checked.append(ip)
-				loop+=1
-			except KeyboardInterrupt:
-				print(" ")
-				exit(1)
-			except:
-			    print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
-			    pass
-
+	             try:
+                            url = "http://ip-api.com/json/"
+                            response = urllib2.urlopen(url + str(ip) )
+                            name = response.read()
+                            labs = json.loads(name)
+			    theip = labs['query'].encode('ascii','replace')
+                            print(gr+"\n["+wi+"#"+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
+	                    test = labs['regionName'].encode('ascii','replace')
+                            print(rd+"INFO"+gr+":["+wi+str(theip).encode('ascii','replace')+gr+"]===:")
+                            print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
+                            print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
+                            print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace')) 
+                            print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
+                            print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
+                            print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
+                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
+                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
+                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
+                            print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
+                            print(pu+"===============================\n"+wi)
+	             except KeyboardInterrupt:
+                                print(rd+"\n["+yl+"CTRL+C"+rd+"]"+yl+" Exiting.....\n")
+                                exit(1)
+	             except:
+		                print(rd+"\t\t ["+yl+"!"+rd+"]"+yl+" Something Went Wrong"+rd+" !!!")
+				print(yl+"["+rd+"!"+yl+"] "+wi+"Show This GeoIP INFO For This IP Here[ "+gr+"https://whatismyipaddress.com/ip/"+str(ip)+wi+" ]")
+                                pass
 checkmecon = checkmecon()
 
 def Main():
@@ -301,13 +300,11 @@ Examples:
 	 else:
 	   print(rd+"\n["+yl+"!"+rd+"]"+yl+" IsSpy: Error: No Such Option: "+ch)
 	   exit(1)
-
 if __name__=="__main__":
         try:
            Main()
         except Exception as e:
            pass
-
 ##############################################################
 ##################### 		     #########################
 #####################   END OF TOOL  #########################
